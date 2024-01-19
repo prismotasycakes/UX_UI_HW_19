@@ -1,0 +1,233 @@
+html, body {
+    height: 100%;
+}
+
+body{
+    margin: 0;
+}
+
+p, li, h1 {
+    font-family: 'Anton', sans-serif;;
+}
+
+/*navigation*/
+.inline-block{
+    display: inline-block;
+    vertical-align: top;
+
+}
+
+.logo{
+    width: 200px;
+    height: 100%;
+    
+}
+
+nav {
+    display: flex;
+    width: 100%;
+    height: 20%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: rgb(232, 232, 232);
+}
+
+nav li {
+    text-decoration: none;
+    margin: 0 40px;
+    padding-top: 5%;
+   
+}
+
+/* about me section*/
+.content {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 5%;
+    background-color: #C3C3C3;
+    
+}
+
+#aboutText {
+    /* background-color: beige; */
+    max-width: none;
+}
+
+.heroImg {
+    display: flex;
+    background-color: cornsilk;
+    align-items: end;
+
+}
+
+/* scrolling text Skills */
+.scrollingText{
+    background-color: #B1B1B1;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    display: flex;  
+    font-family: 'Anton', sans-serif;
+    
+    
+}
+
+.skillsText{
+    font-size: 25px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: black;
+    white-space: nowrap;
+    animation: animate_text 30s linear infinite;
+}
+
+.skillsText span {
+    margin: 0 40px;
+    display: inline-flex;
+}
+
+@keyframes animate_text {
+    from {
+        transform: translate3d(0, 0, 0);
+    }
+    to {
+        transform: translate3d(-100%, 0, 0);
+    }
+}
+
+/* Projects Section*/
+
+.projects {
+    background-color: #f0f0f0;
+    padding: 20px;
+    overflow: hidden;
+  }
+  
+  .containers {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .projects{
+    padding: 0%;
+  }
+
+.project {
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    width: 30%; /* Adjust the width as needed */
+    transition: transform 0.3s ease;
+  }
+  
+  .project:hover {
+    transform: scale(1); /* Adjust the scale factor as needed */
+  }
+  
+  .project img {
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: opacity 0.3s ease;
+  }
+  
+  .project:hover img {
+    opacity: 100; /* Adjust the overlay opacity as needed */
+  }
+  
+  .project::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .project:hover::before {
+    opacity: 100;
+  }
+  
+  .project[data-hover-image="your-hover-image1.jpg"]::before {
+    background-image: url('../images/Project\ 1\ Overlay.png');
+  }
+  
+  .project[data-hover-image="your-hover-image2.jpg"]::before {
+    background-image: url('../images/Project\ 2\ Overlay.png');
+  }
+  
+  .project[data-hover-image="your-hover-image3.jpg"]::before {
+    background-image: url('../images/Project\ 3\ Overlay.png');
+  }
+
+
+/*footer content*/
+#details{
+    width: 400px;
+    height: 100px;
+}
+
+#button{
+    text-align: right;
+}
+
+
+#aboutText{
+    max-width: 25%;
+
+}
+
+
+footer {
+    padding-top: 1%;
+    background-color: #b7b7b7;
+    display: flex;
+    justify-content: space-around;
+    
+}
+
+.footerImg {
+    padding: 1%;
+}
+
+footer ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-left: 0;
+    
+}
+
+.footerLeft{
+    justify-content: flex-start;
+}
+
+.footerRight{
+    justify-content: flex-end;
+    font-family: 'Anton', sans-serif; 
+}
+
+/*Responsive Layout for Mobile*/
+@media only screen and (max-width: 900px){
+   
+    .containers{
+        
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 2fr;
+        /* height: 550px; */
+        grid-template-areas: "projectOne projectTwo"
+            "projectThree projectThree"
+            " projectThree projectThree";
+        
+        
+    }
+    
+}
